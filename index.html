@@ -18,103 +18,111 @@
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #dbeafe, #ffffff);
-      color: #2c2c2c;
-      position: relative;
+    }
+
+    /* INTRO */
+    .intro {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, #bfdbfe, #ffffff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeOut 1.5s ease forwards;
+      animation-delay: 2.5s;
+    }
+
+    .intro h1 {
+      font-size: 48px;
+      color: #1e3a8a;
+      animation: zoomIn 1.5s ease;
+      text-align: center;
     }
 
     /* HEADER */
     header {
-      background-color: #bfdbfe;
+      background: #bfdbfe;
       padding: 24px 32px;
-      position: relative;
     }
 
-    header h1 {
-      font-size: 28px;
-      color: #1e3a8a;
-    }
-
-    /* NAVIGATION */
     nav {
       position: fixed;
       top: 20px;
       right: 32px;
-      display: flex;
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.8);
       padding: 10px 18px;
       border-radius: 20px;
-      backdrop-filter: blur(6px);
-      z-index: 100;
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
       text-decoration: none;
-      font-weight: 600;
       color: #2563eb;
+      font-weight: 600;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* MAIN CONTENT */
     main {
       max-width: 800px;
-      margin: 120px auto;
-      padding: 20px;
+      margin: 140px auto;
       text-align: center;
+      padding: 20px;
     }
 
-    main h2 {
-      font-size: 48px;
-      color: #ffffff;
-      text-shadow: 0 0 10px #93c5fd;
-    }
-
-    main p {
-      margin-top: 24px;
-      font-size: 18px;
-      color: #4b5563;
-      line-height: 1.7;
-    }
-
-    /* FOOTER */
     footer {
-      background-color: #93c5fd;
+      background: #93c5fd;
       text-align: center;
       padding: 16px;
-      font-size: 14px;
-      color: #1e3a8a;
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="intro">
+    <h1>Perpustakaan<br>Haya Farras</h1>
+    <p>Selamat datang ✨</p>
+  </div>
+
   <header>
     <h1>Perpustakaan Haya Farras</h1>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="koleksi.html">Koleksi</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="kontak.html">Kontak</a>
+    <a href="#">Home</a>
+    <a href="#">Koleksi</a>
+    <a href="#">Tentang</a>
+    <a href="#">Kontak</a>
   </nav>
 
   <main>
     <h2>COMING SOON</h2>
-    <p>
-      Website Perpustakaan Haya Farras masih dalam tahap pengembangan 🌱  
-      <br><br>
-      Mohon nantikan yaa ✨
-    </p>
+    <p>Saat ini website Perpustakaan Haya Farras masih dalam proses tumbuh dan berkembang🌱</p>
+       Mohon nantikan yaa!</p>
   </main>
 
   <footer>
     © 2026 Perpustakaan Haya Farras
   </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.querySelector(".intro").style.display = "none";
+      }, 4000);
+    });
+  </script>
 
 </body>
 </html>
